@@ -20,5 +20,16 @@ app.get('/contestants', function(req, res) {
   });
 });
 
+app.get('/model/:name', function(req, res) {
+  var name = req.params.name;
+  console.log(name);
+  missuniversemyanmar.getModelBio(name, function(result) {
+    res.json(200, {
+      status: 'ok',
+      biography: result
+    });
+  });
+});
+
 var port = Number(process.env.PORT || 5000);
 app.listen(port);
