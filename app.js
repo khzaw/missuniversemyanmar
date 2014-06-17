@@ -6,6 +6,12 @@ var express = require('express'),
 var app = express();
 
 app.use(logfmt.requestLogger());
+app.use(function(err, req, res, next) {
+  res.json(500, {
+    status: 'error',
+    msg: 'Something broke!'
+  });
+});
 
 app.get('/', function(req, res) {
   res.redirect('https://github.com/emoosx/missuniversemyanmar');
