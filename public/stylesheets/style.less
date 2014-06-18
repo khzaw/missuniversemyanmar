@@ -1,0 +1,61 @@
+@code-bg: #202020;
+body {
+  min-width: 480px;
+  background-color: #F57B6D;
+  color: white;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', helvetica, arial, sans-serif;
+}
+.title {
+  font-size: 2.25em;
+  strong {
+    font-weight: bold;
+  }
+}
+.container {
+  width: 70%;
+  margin: 10% auto;
+  padding: 1em;
+}
+.intro {
+  font-size: 1.5em;
+}
+.base {
+  h3 {font-size: 1.5em; margin-bottom: 0px;}
+  a {
+    display: block;
+    background-color: @code-bg;
+    padding: 1em;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+}
+
+.example {
+  .endpoint {
+    font-size: 1.75em;
+    font-family: 'Droid Sans Pro', 'Consolas', monospace;
+    margin: 9px 0px;
+  }
+  p {
+    font-size: 1.25em;
+    margin: 9px 0px;
+  }
+  pre, .eg {
+    font-size: 1.3em;
+    overflow: auto;
+    background-color: @code-bg;
+    border-radius: 5px;
+    padding: 1.5em;
+  }
+  .eg {
+    display: block;
+  }
+  margin-top: 2em;
+}
+
+.feedback {
+  p {
+    font-size: 1.5em;
+  }
+}

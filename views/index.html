@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Kaung Htet Zaw">
+  <meta name="description" content="Unofficial API for Miss Universe Myanmar 2014">
+  <title>Miss Universe Myanmar 2014 API</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
+<body>
+  <div class="container">
+  <h1 class="title">Miss Universe Myanmar 2014 API</h1>
+  <p class="intro">This is the <strong>unofficial</strong> API for <a href="http://missuniversemyanmar.com">Miss Universe Myanmar 2014 Competition</a> written in Nodejs and Express framework.</p>
+  <p class="intro">Please note that this project is not affiliated with the actual organization. Source code is available at <a href="//github.com/emoosx/missuniversemyanmar">Github.</a></p>
+
+  <div class="base">
+    <h3>Base URL</h3>
+    <a href="#">http://missuniversemyanmar.herokuapp.com</a>
+  </div>
+  <div class="example">
+    <h3 class="endpoint">GET /contestants</h3>
+    <p>Getting all 20 contestants including their current votes and thumbnails.</p>
+    <pre>
+      <code>
+{
+"status": "ok",
+"contestants": [
+  {
+  "name": "Chuu Nadi Khin",
+  "thumbnail": "http://www.missuniversemyanmar.com/sites/default/files/styles/mainpage_contestant/public/01-B.jpg?itok=i8m_GM_s",
+  "votes": {
+    "website": 83,
+    "facebook": 80
+    }
+  },
+  {
+  "name": "Shwe Sin Ko Ko",
+  "thumbnail": "http://www.missuniversemyanmar.com/sites/default/files/styles/mainpage_contestant/public/02-B.jpg?itok=loFKwKU3",
+  "votes": {
+    "website": 86,
+    "facebook": 192
+    }
+  },
+  ... and so on
+]
+}
+      </code>
+    </pre>
+  </div>
+
+  <div class="example">
+    <h3 class="endpoint">GET /model/:name</h3>
+    <p>Biography of individual contestant where <code>:name</code> is the name of the contestant in small case delimited by hyphen.</p>
+    <code class="eg">
+      GET /model/eaint-myat-noe
+    </code>
+    <code>
+      <pre>
+{
+"status": "ok",
+"biography": {
+  "waistNumber": 20,
+  "name": "Eaint Myat Noe",
+  "age": 23,
+  "citizenship": "Shan-Myanmar",
+  "education": "B.C.Sc, Programming",
+  "otherQualifications": "Winner of Focus Online Next Top  Model Season 2",
+  "ambition": "To become successful women",
+  "height": "168cm",
+  "photos": [
+    "http://missuniversemyanmar.com/sites/default/files/styles/main_contestant/public/20-B.jpg?itok=UruKL4DQ",
+    "http://missuniversemyanmar.com/sites/default/files/styles/main_contestant/public/20-A.jpg?itok=LjcH0oWm"
+    ]
+  }
+}
+      </pre>
+    </code>
+  </div>
+  <div class="feedback">
+    <p>If you have any feedback, contact 
+      <a href="//twitter.com/khzaw">me</a> or create an <a href="//github.com/emoosx/missuniversemyanmar/issues">issue</a> in the repo.
+    </p>
+  </div>
+</div>
+</body>
+</html>

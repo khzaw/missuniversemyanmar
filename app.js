@@ -1,11 +1,18 @@
 var express = require('express'),
     logfmt = require('logfmt'),
-    cookieParser = require('cookie-parser'),
+    path = require('path'),
     missuniversemyanmar = require('./missuniversemyanmar');
 
 var app = express();
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(logfmt.requestLogger());
+app.use(require('less-middleware')(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(err, req, res, next) {
   res.json(500, {
     status: 'error',
@@ -14,7 +21,9 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('/', function(req, res) {
-  res.redirect('https://github.com/emoosx/missuniversemyanmar');
+  res.render('index', {
+    title: 'Miss Universe Myanmar 2014 Competition'
+  });
 });
 
 app.get('/contestants', function(req, res) {
@@ -38,4 +47,4 @@ app.get('/model/:name', function(req, res) {
 });
 
 var port = Number(process.env.PORT || 5000);
-app.listen(port);
+app.listen(8080);
