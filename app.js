@@ -47,4 +47,4 @@ app.get('/model/:name', function(req, res) {
 });
 
 var port = Number(process.env.PORT || 5000);
-app.listen(8080);
+app.listen(port);
