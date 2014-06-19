@@ -1,26 +1,32 @@
+// colors
 @code-bg: #202020;
+@body-bg: #f57b6d;
+
+// typography
+@title-font-size: 2.25em;
+@base-font-size: 1.5em;
 body {
   min-width: 480px;
-  background-color: #F57B6D;
+  background-color: @body-bg;
   color: white;
   font-family: 'Source Sans Pro', 'Helvetica Neue', helvetica, arial, sans-serif;
 }
 .title {
-  font-size: 2.25em;
+  font-size: @title-font-size;
   strong {
     font-weight: bold;
   }
 }
 .container {
   width: 70%;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 1em;
 }
 .intro {
-  font-size: 1.5em;
+  font-size: @base-font-size;
 }
 .base {
-  h3 {font-size: 1.5em; margin-bottom: 0px;}
+  h3 {font-size: @base-font-size; margin-bottom: 0px;}
   a {
     display: block;
     background-color: @code-bg;
@@ -56,6 +62,6 @@ body {
 
 .feedback {
   p {
-    font-size: 1.5em;
+    font-size: @base-font-size;
   }
 }
